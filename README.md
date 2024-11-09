@@ -46,7 +46,8 @@ The frontend user interface (UI) is designed to be intuitive and responsive. It 
 - **Set Merkle Root**: An input field for setting a new Merkle root and a button to trigger the contract's `setMerkleRoot` function.
 - **Verify Transaction Inclusion**: Two input fields (one for transaction hash and one for the Merkle proof) and a button to verify transaction inclusion using the `verifyTransactionInclusion` function.
 
- ## 4. Deployment and Hosting
+
+## 4. Deployment and Hosting
 
 ### Deploy Smart Contract:
 Deploy the smart contract on Ethereum using Truffle, Hardhat, or Remix IDE. After deployment, obtain the contract address and ABI.
@@ -117,6 +118,32 @@ Run the tests with the following command:
     ```bash
     python -m unittest discover tests
 
+### Example Test Code:
+    import unittest
+    from src.signature_verifier import SignatureVerifier
+
+    class TestSignatureVerifier(unittest.TestCase):
+    def setUp(self):
+        self.verifier = SignatureVerifier()
+
+    def test_verify_signature_ecdsa(self):
+        address = "0xExampleAddress"
+        signature_data = b"\x00\x01"
+        signed_hash = b"\x00" * 32
+        result = self.verifier.verify_signature(address, signature_data, signed_hash, "ecdsa")
+        self.assertTrue(result)
+
+    def test_verify_signature_schnorr(self):
+        address = "0xExampleAddress"
+        signature_data = b"\x00\x02"
+        signed_hash = b"\x00" * 32
+        result = self.verifier.verify_signature(address, signature_data, signed_hash, "schnorr")
+        self.assertTrue(result)
+
+     if __name__ == '__main__':
+     unittest.main()
+
+
  --------------------------------------------------------------------------------------------------
  
 ## Special Thanks
@@ -126,3 +153,15 @@ I would like to extend my gratitude to **CharterLabs** for giving me the opportu
 **contact-kashishsin28@gmail.com**
 
 
+
+
+
+
+
+
+
+
+
+
+
+### UI/UX Design Code
