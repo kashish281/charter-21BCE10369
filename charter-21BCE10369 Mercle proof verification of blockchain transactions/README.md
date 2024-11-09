@@ -1,4 +1,4 @@
-# Technical Documentation: Merkle Proof Verification with Ethereum Smart Contract
+# Technical Documentation: Merkle Proof Verification of Blockchain Transactions
 
 ## Overview
 This solution enables the verification of transaction inclusion in a Merkle tree using an Ethereum smart contract. It integrates with a React-based frontend, which allows users to interact with the smart contract by fetching and setting a Merkle Root and verifying transactions using Merkle proofs. The solution incorporates a user-friendly UI with MetaMask integration for Ethereum wallet interaction.
