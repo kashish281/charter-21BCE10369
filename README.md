@@ -154,14 +154,3 @@ I would like to extend my gratitude to **CharterLabs** for giving me the opportu
 
 
 
-
-
-
-
-
-
-
-
-
-
-### UI/UX Design Code
